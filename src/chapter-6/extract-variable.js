@@ -1,7 +1,7 @@
-// const order = {
-//     quantity: 10,
-//     itemPrice: 100,
-// };
+const order = {
+    quantity: 10,
+    itemPrice: 100,
+};
 
 class Order {
     constructor(aRecord) {
@@ -15,11 +15,16 @@ class Order {
         return this._data.itemPrice;
     }
     get price() {
-        return (
-            this.quantity * this.itemPrice -
-            Math.max(0, this.quantity - 500) * this.itemPrice * 0.05 +
-            Math.min(this.quantity * this.itemPrice * 0.1, 100)
-        );
+        return this.basePrice - this.quantityDiscount + this.shipping;
+    }
+    get basePrice() {
+        return this.quantity * this.itemPrice;
+    }
+    get quantityDiscount() {
+        return Math.max(0, this.quantity - 500) * this.itemPrice * 0.05;
+    }
+    get shipping() {
+        return Math.min(this.basePrice * 0.1, 100);
     }
 }
 
@@ -34,7 +39,8 @@ function getPrice(order) {
 export { order, getPrice };
 
 try {
-    const result = getPrice(order);
+    const _order = new Order(order);
+    const result = getPrice(_order);
     console.log(result);
 } catch (error) {
     console.log(error);
