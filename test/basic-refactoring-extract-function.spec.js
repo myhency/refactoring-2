@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import sinon from "sinon";
-import { printOwing } from "../src/chapter-6/index.js";
+import { printOwing } from "../src/chapter-6/extract-function.js";
 import { owingInvoice as invoices } from "../src/data/index.js";
 
 describe("basic refactor", () => {
