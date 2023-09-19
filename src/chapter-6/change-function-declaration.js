@@ -1,11 +1,11 @@
-function circum(radius) {
+function circumference(radius) {
     return 2 * Math.PI * radius;
 }
 
-export { circum };
+export { circumference };
 
 try {
-    const result = circum(10);
+    const result = circumference(10);
     console.log(result);
 } catch (error) {
     console.log(error);
