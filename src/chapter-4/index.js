@@ -102,3 +102,5 @@ class Producer {
         return result;
     }
 }
+
+export { Province, sampleProvinceData };
