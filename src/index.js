@@ -1,6 +1,9 @@
-/**
- * @fileoverview Index file for the app.
- */
+import { invoices, plays } from "./data/index.js";
+import statement from "./statement.js";
 
-import plays from "./data/plays.json";
-import invoices from "./data/invoices.json";
+try {
+    const result = statement(invoices, plays);
+    console.log(result);
+} catch (error) {
+    console.log(error);
+}
