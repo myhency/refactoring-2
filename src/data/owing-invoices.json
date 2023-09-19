@@ -1,0 +1,17 @@
+{
+    "customer": "BigCo",
+    "orders": [
+        {
+            "playID": "hamlet",
+            "amount": 55
+        },
+        {
+            "playID": "as-like",
+            "amount": 35
+        },
+        {
+            "playID": "othello",
+            "amount": 40
+        }
+    ]
+}
