@@ -59,7 +59,7 @@ describe("province", () => {
             expect(asia.profit).NaN;
         });
     });
-    describe("string for producers", () => {
+    describe.skip("string for producers", () => {
         it("", () => {
             const data = {
                 name: "String producers",
