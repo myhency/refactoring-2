@@ -11,10 +11,12 @@ function calculateOutstanding() {
 function printOwing(invoice) {
     printBanner();
     let outStanding = calculateOutstanding();
+    printDetails();
 
-    // 세부 사항 출력
-    console.log(`고객명: ${invoice.customer}`);
-    console.log(`채무액: ${outStanding}`);
+    function printDetails() {
+        console.log(`고객명: ${invoice.customer}`);
+        console.log(`채무액: ${outStanding}`);
+    }
 }
 
 export { printOwing };
