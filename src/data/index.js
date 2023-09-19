@@ -15,7 +15,12 @@ const owingInvoiceData = fs.readFileSync(
     path.resolve(__dirname, "./owing-invoices.json"),
     "utf8"
 );
+const orderData = fs.readFileSync(
+    path.resolve(__dirname, "./order.json"),
+    "utf8"
+);
 const plays = JSON.parse(playsData);
 const invoices = JSON.parse(invoicesData);
 const owingInvoice = JSON.parse(owingInvoiceData);
-export { plays, invoices, owingInvoice };
+const order = JSON.parse(orderData);
+export { plays, invoices, owingInvoice, order };
