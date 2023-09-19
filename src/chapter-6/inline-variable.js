@@ -2,8 +2,7 @@ import Order from "../data/Order.js";
 import { order } from "../data/index.js";
 
 function getIsBasePrice(anOrder) {
-    let basePrice = anOrder.basePrice;
-    return basePrice > 1000;
+    return anOrder.basePrice > 1000;
 }
 
 export { getIsBasePrice };
