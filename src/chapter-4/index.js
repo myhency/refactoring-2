@@ -51,7 +51,7 @@ class Province {
         this._price = parseInt(arg);
     }
     get shortfall() {
-        return this._demand - this.totalProduction;
+        return this._demand - this.totalProduction * 2;
     }
 }
 
