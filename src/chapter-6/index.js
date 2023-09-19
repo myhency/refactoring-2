@@ -26,14 +26,9 @@ class Clock {
 }
 
 function printOwing(invoice) {
-    let outStanding = 0;
-
     printBanner();
 
-    // 미해결 채무(outstanding)를 계산한다.
-    for (const o of invoice.orders) {
-        outStanding += o.amount;
-    }
+    const outStanding = calculateOutstanding(invoice);
 
     recordDueDate(invoice);
 
@@ -44,6 +39,14 @@ function printOwing(invoice) {
         console.log("**** 고객 채무 ****");
         console.log("***********************");
     }
+}
+
+function calculateOutstanding(invoice) {
+    let result = 0;
+    for (const o of invoice.orders) {
+        result += o.amount;
+    }
+    return result;
 }
 
 function recordDueDate(invoice) {
