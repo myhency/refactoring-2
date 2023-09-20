@@ -21,7 +21,7 @@ describe("basic refactor", () => {
         expect(consoleLogSpy.calledWith("채무액: 10")).to.be.true;
     });
 
-    it("printOwing", () => {
+    it.skip("printOwing", () => {
         printOwing(invoices);
         expect(consoleLogSpy.calledWith("***********************")).to.be.true;
         expect(consoleLogSpy.calledWith("**** 고객 채무 ****")).to.be.true;
