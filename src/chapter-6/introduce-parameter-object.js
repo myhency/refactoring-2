@@ -9,14 +9,37 @@ const station = {
     ],
 };
 
-function readingsOutsideRange(station, min, max) {
-    return station.readings.filter((r) => r.temp < min || r.temp > max);
+const operationPlan = {
+    temperatureFloor: 50,
+    temperatureCeiling: 55,
+};
+
+class NumberRange {
+    constructor(min, max) {
+        this._data = { min: min, max: max };
+    }
+    get min() {
+        return this._data.min;
+    }
+    get max() {
+        return this._data.max;
+    }
 }
 
-export { station, readingsOutsideRange };
+function readingsOutsideRange(station, range) {
+    return station.readings.filter(
+        (r) => r.temp < range.min || r.temp > range.max
+    );
+}
+
+export { station, readingsOutsideRange, operationPlan, NumberRange };
 
 try {
-    const result = readingsOutsideRange(station, 50, 55);
+    const range = new NumberRange(
+        operationPlan.temperatureFloor,
+        operationPlan.temperatureCeiling
+    );
+    const result = readingsOutsideRange(station, range);
     console.log(result);
 } catch (error) {
     console.log(error);
